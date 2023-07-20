@@ -1,0 +1,12 @@
+tabWidth: 2
+printWidth: 100
+semi: false
+singleQuote: true
+arrowParens: "avoid"
+trailingComma: "es5"
+svelteSortOrder: "markup-options-scripts-styles"
+overrides:
+  - files: "*.yaml"
+    options:
+      singleQuote: false
+endOfLine: auto

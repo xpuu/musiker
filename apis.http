@@ -1,0 +1,69 @@
+@me = http://localhost:5173
+@ytApiKey = AIzaSyBC6L5olrntP15e_KUP0r7ax_ye2VRyU4w
+@imvdbApiKey = tXTzKvWu6l38kBCR6VYBb15wHeTY5oooKEyxDStv
+
+# Load feed
+GET {{me}}/feed/
+
+###
+
+# Add to feed
+POST {{me}}/feed/
+content-type: application/json
+
+{
+  "author": "Queen",
+  "title": "We Are The Champions"
+}
+
+###
+
+# Video info
+https://www.googleapis.com/youtube/v3/videos?key={{ytApiKey}}&part=snippet&id=gccc9SaClPI
+
+###
+
+# Get Youtube page
+# videoDescriptionMusicSectionRenderer
+# carouselLockups.0.carouselLockupRenderer.infoRows
+https://www.youtube.com/watch?v=-I8weN2aEmU
+Accept-Language: en
+
+###
+
+# Youtube Search
+https://www.googleapis.com/youtube/v3/search?key={{ytApiKey}}&part=snippet&q=The+Long+Tunnel+Of+Wanting+You
+
+###
+
+# MusicBrainz Artist
+@query = "Alanis Morissette"
+GET https://musicbrainz.org/ws/2/artist?query={{query}}
+Accept: application/json
+
+###
+
+# MusicBrainz Recording
+@query = "Your House (Hybrid Forgive Me Mix)" AND arid:4bdcee62-4902-4773-8cd1-e252e2e31225
+GET https://musicbrainz.org/ws/2/recording?query={{query}}
+Accept: application/json
+
+###
+
+# Imvdb
+@query = "The White Stripes - Seven Nation Army"
+GET http://imvdb.com/api/v1/search/videos?q={{query}}
+#IMVDB-APP-KEY: {Your App Key}
+IMVDB-APP-KEY: {{imvdbApiKey}}
+
+###
+
+# Imvdb
+GET http://imvdb.com/api/v1/video/the-white-stripes/seven-nation-army
+IMVDB-APP-KEY: {{imvdbApiKey}}
+
+###
+
+# Imvdb
+GET http://imvdb.com/api/v1/video/288953793236?include=credits
+IMVDB-APP-KEY: {{imvdbApiKey}}
