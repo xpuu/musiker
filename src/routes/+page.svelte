@@ -1,10 +1,10 @@
 <div class="container mx-auto flex flex-col gap-8 p-8">
-  <header class="overflow-auto">
+  <header>
     <h1 class="mb-4">Musiker</h1>
 
     <Share />
   </header>
-  <div>Error</div>
+  {#if 0}<div>Error</div>{/if}
   <div class="grow overflow-auto">
     <Feed />
   </div>
