@@ -52,6 +52,9 @@
 
   function onShare() {
     const m = video.match(/(?<=v=|v\/|vi=|vi\/|youtu\.be\/)[a-zA-Z0-9_-]{11}/)
-    if (m) $id = m[0]
+    if (m) {
+      $id = ''
+      $id = m[0]
+    }
   }
 </script>
