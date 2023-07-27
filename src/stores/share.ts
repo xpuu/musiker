@@ -5,6 +5,7 @@ import _pick from 'just-pick'
 import { browser } from '$app/environment'
 import { durationFmt } from '~/lib/utils'
 import { api } from '$lib/api'
+import { feed } from './feed'
 
 // ---- Youtube
 
@@ -284,4 +285,5 @@ export async function doShare() {
   }
   console.log(data)
   await api('/feed').post(data)
+  feed.set([data, ...get(feed)])
 }
