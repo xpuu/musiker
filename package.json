@@ -40,7 +40,9 @@
   "type": "module",
   "dependencies": {
     "@types/lodash": "^4.14.195",
-    "lodash": "^4.17.21",
+    "just-debounce-it": "^3.2.0",
+    "just-pick": "^4.2.0",
+    "just-safe-get": "^4.2.0",
     "wretch": "^1"
   }
 }
